@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.index-menu {
+    height: 400px;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco translúcido para contraste */
+    border: 1px solid #fff; /* Borde sutil blanco */
+    border-radius: 10px; /* Bordes redondeados para un toque suave */
+    padding: 20px; /* Espacio interno para separar los enlaces */
+    margin: 50px auto; /* Centrado en la página */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); /* Sombra sutil para dar profundidad */        
+}
+
+.index-menu .link {        
+    padding: 5px 7px;
+    border-radius: 10px;
+    color: #CE0002;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;    
+    align-items: center;
+    transition: .5s;        
+    display: block;
+}
+
+.index-menu .link:hover {
+    color: #fff; 
+    background-image: linear-gradient(to right, #CE0002 60%, transparent);
+    padding-left: 25px;
+}
