@@ -1,0 +1,185 @@
+
+--Auditoria y Accion
+ALTER TABLE FIDE_ESTADO_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Accion VARCHAR2(100)
+);
+/
+
+ALTER TABLE FIDE_TIPO_CLIENTE_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+
+ALTER TABLE FIDE_CLIENTE_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+
+ALTER TABLE FIDE_PUESTO_TRABAJO_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_PROVINCIA_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_CANTON_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+
+/
+ALTER TABLE FIDE_DISTRITO_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_SUCURSAL_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_DIRECCION_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_AREA_TRABAJO_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_EMPLEADO_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_CATEGORIA_PRODUCTO_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_PRODUCTO_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_TIPO_RESERVA_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_TIPO_HABITACION_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_HABITACION_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_RESERVA_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_FACTURA_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_DETALLE_SERVICIO_HABITACION_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
+/
+ALTER TABLE FIDE_SERVICIO_HABITACION_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Acción VARCHAR2(100)
+);
