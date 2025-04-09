@@ -16,7 +16,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 
@@ -26,7 +26,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 
@@ -36,7 +36,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_PROVINCIA_TB
@@ -45,7 +45,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_CANTON_TB
@@ -54,7 +54,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 
 /
@@ -64,7 +64,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_SUCURSAL_TB
@@ -73,7 +73,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_DIRECCION_TB
@@ -82,7 +82,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_AREA_TRABAJO_TB
@@ -91,7 +91,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_EMPLEADO_TB
@@ -100,7 +100,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_CATEGORIA_PRODUCTO_TB
@@ -109,7 +109,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_PRODUCTO_TB
@@ -118,7 +118,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_TIPO_RESERVA_TB
@@ -127,7 +127,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_TIPO_HABITACION_TB
@@ -136,7 +136,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_HABITACION_TB
@@ -154,7 +154,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_FACTURA_TB
@@ -163,7 +163,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_DETALLE_SERVICIO_HABITACION_TB
@@ -172,7 +172,7 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
 /
 ALTER TABLE FIDE_SERVICIO_HABITACION_TB
@@ -181,5 +181,5 @@ ADD (
     Creation_date DATE,
     Last_update_by VARCHAR2(100),
     Last_update_date DATE,
-    Acción VARCHAR2(100)
+    Accion VARCHAR2(100)
 );
