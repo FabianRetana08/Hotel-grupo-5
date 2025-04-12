@@ -183,3 +183,12 @@ ADD (
     Last_update_date DATE,
     Accion VARCHAR2(100)
 );
+
+ALTER TABLE FIDE_DETALLE_FACTURA_TB
+ADD (
+    Created_by VARCHAR2(100),
+    Creation_date DATE,
+    Last_update_by VARCHAR2(100),
+    Last_update_date DATE,
+    Accion VARCHAR2(100)
+);
