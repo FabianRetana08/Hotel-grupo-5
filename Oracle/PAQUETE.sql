@@ -25,7 +25,7 @@ CREATE OR REPLACE PACKAGE FIDE_PAQUETE IS
     PROCEDURE FIDE_ESTADO_TB_OBTENER_SP(p_resultado OUT SYS_REFCURSOR, p_id_estado FIDE_ESTADO_TB.id_estado%TYPE);
     PROCEDURE FIDE_ESTADO_TB_ACTUALIZAR_SP(p_id_estado IN NUMBER, p_estado IN VARCHAR2, p_descripcion_estado IN VARCHAR2);
 
-    -- Aquí van los procedimientos restantes (se incluirán a continuación en el cuerpo)
+    
 
 END FIDE_PAQUETE;
 /
@@ -144,7 +144,7 @@ CREATE OR REPLACE PACKAGE BODY FIDE_PAQUETE IS
         RETURN v_lista;
     END;
 
-    -- Procedimientos implementados
+    
     PROCEDURE FIDE_ESTADO_TB_INSERTAR_SP(p_id_estado IN NUMBER, p_estado IN VARCHAR2, p_descripcion_estado IN VARCHAR2) IS
     BEGIN
         INSERT INTO FIDE_ESTADO_TB (ID_ESTADO, ESTADO, DESCRIPCION_ESTADO)
