@@ -1,6 +1,6 @@
 <?php
 $usuario = 'ProyectoFinal';
-$contrasena = '123';
+$contrasena = '123456789';
 $cadenaConexion = 'localhost/XE'; // Reemplaza con el nombre de tu base de datos
 
 // Intentar conectar a Oracle

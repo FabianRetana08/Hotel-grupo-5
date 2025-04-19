@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.options {
+    display: flex;    
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px; /* espacio entre los elementos */
+    padding: 10px 0;
+}
+
+.options div {
+    display: flex;
+}
+
+.go-back-button {    
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;    
+    box-sizing: border-box;
+    background-color: #ccc;
+    color: #333;
+    text-decoration: none;
+}
+
+.go-back-button:hover{
+    background-color: #bbb;
+}
+
+input[type="text"] {
+    padding: 10px 14px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 350px;
+}
+
+input[type="text"]:focus {
+    border-color: #2a9df4;
+    box-shadow: 0 0 6px rgba(42, 157, 244, 0.5); /* Glow leve */
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    margin-left: 10px;
+}
+
+.filter input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2a9df4; /* color moderno para el check */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.filter input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.95rem;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+th {
+    font-weight: 600;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}

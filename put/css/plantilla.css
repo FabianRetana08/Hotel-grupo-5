@@ -11,6 +11,9 @@ body {
     font-family: "Open Sans";    
     color: #fff;
     background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .principal-container {

@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.principal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    margin: 10px auto;
+}
+
+.form-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #333;
+}
+
+.form-inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.form-input-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"] {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 350px;
+}
+
+input[type="text"]:focus {
+    border-color: #CE0002;
+}
+
+select {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 380px;
+    background-color: #fff;
+    color: #333;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='70,100 100,50 40,50' fill='%23333'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+}
+
+select:focus {
+    border-color: #CE0002;
+    box-shadow: 0 0 5px rgba(206, 0, 2, 0.3);
+}
+
+.submit-button,
+.cancel-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: block;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    background-color: #CE0002;
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: #a70001;
+}
+
+.cancel-button {    
+    background-color: #ccc;
+    color: #333;
+    text-decoration: none;
+    
+}
+
+.cancel-button:hover {
+    background-color: #bbb;
+}
+
+.message {
+    text-align: center;
+    color: #CE0002;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.db-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.db-message {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+.continue-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #CE0002;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.continue-button:hover {
+    background-color: #a70001;
+}
