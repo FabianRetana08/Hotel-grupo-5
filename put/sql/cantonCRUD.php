@@ -39,12 +39,34 @@ function obtenerCanton($idCanton){
 }
 
 function insertCanton($idCanton, $nombreCanton, $idEstado){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CANTON_TB_INSERTAR(); END;";
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CANTON_TB_INSERTAR(:idCanton, :nombreCanton, :idEstado); END;";
 
     require('coenction.php');
 
     $stid = oci_parse($conn, $query);
 
-    
+    oci_bind_by_name($stid, ":idCanton", $idCanton);
+    oci_bind_by_name($stid, ":nombreCanton", $nombreCanton);
+    oci_bind_by_name($stid, ":idEstado", $idEstado);
+
+    $resultado = oci_execute($stid);
+
+    return $resultado;
+}
+
+function actualizarCanton($idCanton, $nombreCanton, $idEstado){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CANTON_TB_ACTUALIZAR(:idCanton, :nombreCanton, :idEstado); END;";
+
+    require('coenction.php');
+
+    $stid = oci_parse($conn, $query);
+
+    oci_bind_by_name($stid, ":idCanton", $idCanton);
+    oci_bind_by_name($stid, ":nombreCanton", $nombreCanton);
+    oci_bind_by_name($stid, ":idEstado", $idEstado);
+
+    $resultado = oci_execute($stid);
+
+    return $resultado;
 }
 ?>
