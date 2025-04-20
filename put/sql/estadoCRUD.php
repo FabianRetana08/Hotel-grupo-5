@@ -1,7 +1,7 @@
 <?php
     function obtenerEstado($idEstado){
         //Estructuramos la consulta 
-        $query = 'CALL FIDE_ESTADO_TB_OBTENER_SP(:cursor, :idEstado)';
+        $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_ESTADO_TB_OBTENER_SP(:cursor, :idEstado); END;';
 
         //Hacemos la conexion con la base de datos
         require('conection.php');
@@ -28,7 +28,7 @@
 
     function obtenerEstados(){
         //Estructuramos la consulta 
-        $query = 'CALL FIDE_ESTADO_TB_OBTENER_SP(:cursor, NULL)';
+        $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_ESTADO_TB_OBTENER_SP(:cursor, NULL); END;';
 
         //Hacemos la conexion con la base de datos
         require('conection.php');
@@ -50,7 +50,7 @@
     }
 
     function actualizarestado($idEstado, $estado, $descripcionEstado){
-        $query = 'BEGIN FIDE_ESTADO_TB_ACTUALIZAR_SP(:idEstado, :estado, :descripcionEstado); END;';
+        $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_ESTADO_TB_ACTUALIZAR_SP(:idEstado, :estado, :descripcionEstado); END;';
 
         require('conection.php');
 
@@ -67,7 +67,7 @@
     }
 
     function insertarEstado($idEstado, $estado, $descripcionEstado){
-        $query = 'CALL FIDE_ESTADO_TB_INSERTAR_SP(:id_estado, :estado, :descripcion_estado)';
+        $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_ESTADO_TB_INSERTAR_SP(:id_estado, :estado, :descripcion_estado); END;';
 
         require('conection.php');
 

@@ -1,7 +1,7 @@
 <?php
     function obtenerTipoCliente($idTipoCliente){
         //Estructuramos la consulta 
-        $query = 'CALL FIDE_TIPO_CLIENTE_TB_OBTENER_SP(:cursor, :idTipoCliente)';
+        $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_CLIENTE_TB_OBTENER_SP(:cursor, :idTipoCliente); END;';
 
         //Hacemos la conexion con la base de datos
         require('conection.php');
@@ -28,7 +28,7 @@
 
     function obtenerTipoClientes(){
         //Estructuramos la consulta 
-        $query = 'CALL FIDE_TIPO_CLIENTE_TB_OBTENER_SP(:cursor, NULL)';
+        $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_CLIENTE_TB_OBTENER_SP(:cursor, NULL); END;';
 
         //Hacemos la conexion con la base de datos
         require('conection.php');
@@ -50,7 +50,7 @@
     }
 
     function actualizarTipoCliente($idTipoCliente, $descripcion, $idEstado){
-        $query = 'BEGIN FIDE_TIPO_CLIENTE_TB_ACTUALIZAR_SP(:idTipoCliente, :descripcion, :idEstado); END;';
+        $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_CLIENTE_TB_ACTUALIZAR_SP(:idTipoCliente, :descripcion, :idEstado); END;';
 
         require('conection.php');
 
@@ -67,7 +67,7 @@
     }
 
     function insertarTipoCliente($idTipoCliente, $descripcion, $idEstado){
-        $query = 'CALL FIDE_TIPO_CLIENTE_TB_INSERTAR_SP(:idTipoCliente, :descripcion, :idEstado)';
+        $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_CLIENTE_TB_INSERTAR_SP(:idTipoCliente, :descripcion, :idEstado); END;';
 
         require('conection.php');
 

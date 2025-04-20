@@ -1,6 +1,6 @@
 <?php
 function obtenerPuestosTrabajo(){
-    $query = "CALL FIDE_PUESTO_TRABAJO_TB_OBTENER_SP(:cursor, NULL)";
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PUESTO_TRABAJO_TB_OBTENER_SP(:cursor, NULL); END;";
 
     require('conection.php');
 
@@ -18,7 +18,7 @@ function obtenerPuestosTrabajo(){
 }
 
 function obtenerPuestoTrabajo($idPuestoTrabajo){
-    $query = "CALL FIDE_PUESTO_TRABAJO_TB_OBTENER_SP(:cursor, :idPuestoTrabajo)";
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PUESTO_TRABAJO_TB_OBTENER_SP(:cursor, :idPuestoTrabajo); END;";
 
     require('conection.php');
 
@@ -39,7 +39,7 @@ function obtenerPuestoTrabajo($idPuestoTrabajo){
 }
 
 function insertarPuestoTrabajo($idPuestoTrabajo, $nombre, $descripcion, $salario, $idEstado){
-    $query = "CALL FIDE_PUESTO_TRABAJO_TB_INSERTAR_SP(:idPuestoTrabajo, :nombre, :descripcion, :salario, :idEstado)";
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PUESTO_TRABAJO_TB_INSERTAR_SP(:idPuestoTrabajo, :nombre, :descripcion, :salario, :idEstado); END;";
 
     require('conection.php');
 
@@ -57,7 +57,7 @@ function insertarPuestoTrabajo($idPuestoTrabajo, $nombre, $descripcion, $salario
 }
 
 function actualizarPuestoTrabajo($idPuestoTrabajo, $nombre, $descripcion, $salario, $idEstado){
-    $query = "CALL FIDE_PUESTO_TRABAJO_TB_ACTUALIZAR_SP(:idPuestoTrabajo, :nombre, :descripcion, :salario, :idEstado)";
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PUESTO_TRABAJO_TB_ACTUALIZAR_SP(:idPuestoTrabajo, :nombre, :descripcion, :salario, :idEstado); END;";
 
     require('conection.php');
 

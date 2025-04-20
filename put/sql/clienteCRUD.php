@@ -1,7 +1,7 @@
 <?php
 function obtenerClientes(){
     //Estructuramos la consulta 
-    $query = 'CALL FIDE_CLIENTE_TB_OBTENER_SP(:cursor, NULL)';
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CLIENTE_TB_OBTENER_SP(:cursor, NULL); END;';
 
     //Hacemos la conexion con la base de datos
     require('conection.php');
@@ -24,7 +24,7 @@ function obtenerClientes(){
 
 function obtenerCliente($idCliente){
     //Estructuramos la consulta 
-    $query = 'CALL FIDE_CLIENTE_TB_OBTENER_SP(:cursor, :idCliente)';
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CLIENTE_TB_OBTENER_SP(:cursor, :idCliente); END;';
 
     //Hacemos la conexion con la base de datos
     require('conection.php');
@@ -49,7 +49,7 @@ function obtenerCliente($idCliente){
 }
 
 function insertarCliente($idCliente, $nombre, $primerApellido, $segundoApellido, $email, $numTelefono, $idTIpoCliente, $idEstado){
-    $query = 'CALL FIDE_CLIENTE_TB_INSERTAR_SP(:idCliente, :nombre, :primerApellido, :segundoApellido, :email, :numTelefono, :idTIpoCliente, :idEstado)';
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CLIENTE_TB_INSERTAR_SP(:idCliente, :nombre, :primerApellido, :segundoApellido, :email, :numTelefono, :idTIpoCliente, :idEstado); END;';
 
     require('conection.php');
 
@@ -70,7 +70,7 @@ function insertarCliente($idCliente, $nombre, $primerApellido, $segundoApellido,
 }
 
 function actualizarCliente($idCliente, $nombre, $primerApellido, $segundoApellido, $email, $numTelefono, $idTIpoCliente, $idEstado){
-    $query = 'CALL FIDE_CLIENTE_TB_ACTUALIZAR_SP(:idCliente, :nombre, :primerApellido, :segundoApellido, :email, :numTelefono, :idTIpoCliente, :idEstado)';
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CLIENTE_TB_ACTUALIZAR_SP(:idCliente, :nombre, :primerApellido, :segundoApellido, :email, :numTelefono, :idTIpoCliente, :idEstado); END;';
 
     require('conection.php');
 
