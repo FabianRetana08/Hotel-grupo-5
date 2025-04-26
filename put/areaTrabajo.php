@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/plantilla.css"> 
     <link rel="stylesheet" href="css/menu.css"> 
-    <title>Document</title>
+    <title>Area de Trabajo</title>
 </head>
 <body>
     <?php include('header/header.php'); ?>
 
     <div class="principal-container">
         <div class="menu">
-            <a href="listaEmpleados.php" class="link">Ver lista de Empleados</a>
-            <a href="empleadoInsert.php" class="link">Insertar un Empleado</a>
-            <a href="empleadoActualizar.php" class="link">Actualizar un Empleado</a>
-            <a href="puestoTrabajo.php" class="link">Puesto de Trabajo</a>
-            <a href="areaTrabajo.php" class="link">Area de Trabajo</a>
+            <a href="listaAreaTrabajo.php" class="link">
+                Ver la lista de las Areas de Trabajo
+            </a>
+            <a href="areaTrabajoInsert.php" class="link">
+                Insertar una Area de Trabajo
+            </a>
+            <a href="areaTrabajoActualizar.php" class="link">
+                Actualizar una Area de Trabajo
+            </a>
         </div>
     </div>
 </body>

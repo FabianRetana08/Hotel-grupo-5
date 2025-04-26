@@ -15,14 +15,26 @@
     <div class="principal-container">        
 
         <div class="menu">
+            <a href="listaDirecciones.php" class="link">
+                Ver lista de Direcciones
+            </a>
+            <a href="direccionInsert.php" class="link">
+                Insertar una Direccion
+            </a>
+            <a href="direccionActualizar.php" class="link">
+                Actualizar una Direccion
+            </a>
             <a href="provincia.php" class="link">
                 Provincia
             </a>
-            <a href="estadoInsert.php" class="link">
+            <a href="canton.php" class="link">
                 Canton
             </a>
-            <a href="estadoActualizar.php" class="link">
+            <a href="distrito.php" class="link">
                 Distrito
+            </a>
+            <a href="sucursal.php" class="link">
+                Sucursal
             </a>
         </div>
     </div>

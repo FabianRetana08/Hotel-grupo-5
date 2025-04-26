@@ -15,14 +15,14 @@
     <div class="principal-container">        
 
         <div class="menu">
-            <a href="listaProvincia.php" class="link">
-                Ver lista de Provincias
+            <a href="listaSucursales.php" class="link">
+                Ver lista de las Sucursales
             </a>
-            <a href="provinciaInsert.php" class="link">
-                Insertar una Provincia
+            <a href="sucursalInsert.php" class="link">
+                Insertar una Sucursal
             </a>
-            <a href="provinciaActualizar.php" class="link">
-                Actualizar una Provincia
+            <a href="sucursalActualizar.php" class="link">
+                Actualizar una Sucursal
             </a>
         </div>
     </div>

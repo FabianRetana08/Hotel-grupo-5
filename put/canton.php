@@ -15,14 +15,14 @@
     <div class="principal-container">        
 
         <div class="menu">
-            <a href="listaProvincia.php" class="link">
-                Ver lista de Provincias
+            <a href="listaCanton.php" class="link">
+                Ver lista de los Cantones
             </a>
-            <a href="provinciaInsert.php" class="link">
-                Insertar una Provincia
+            <a href="cantonInsert.php" class="link">
+                Insertar un Canton
             </a>
-            <a href="provinciaActualizar.php" class="link">
-                Actualizar una Provincia
+            <a href="cantonActualizar.php" class="link">
+                Actualizar un Canton
             </a>
         </div>
     </div>

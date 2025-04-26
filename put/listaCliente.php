@@ -12,7 +12,7 @@ $clientes = obtenerClientes();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/plantilla.css"> 
-    <link rel="stylesheet" href="css/listaEstados.css"> 
+    <link rel="stylesheet" href="css/listasEstilo.css"> 
     <title>Document</title>
 </head>
 <body>

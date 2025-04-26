@@ -2,7 +2,7 @@
 ini_set('display_errors', 0);
 error_reporting(0); 
 
-include('sql/segmentosPruebasSQL.php');
+include('sql/estadoCRUD.php');
 
 $insertEnviado = false;
 $insertRealizado = false;

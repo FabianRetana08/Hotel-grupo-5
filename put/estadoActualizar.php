@@ -1,5 +1,5 @@
 <?php
-include('sql/segmentosPruebasSQL.php');
+include('sql/estadoCRUD.php');
 
 $busquedaRealizada = false;
 $actualizacionRealizada = false;

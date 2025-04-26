@@ -1,5 +1,5 @@
 <?php 
-include('sql/segmentosPruebasSQL.php');
+include('sql/estadoCRUD.php');
 $estados = obtenerEstados();
  ?>
 
@@ -11,7 +11,7 @@ $estados = obtenerEstados();
     <title>Document</title>
 
     <link rel="stylesheet" href="css/plantilla.css"> 
-    <link rel="stylesheet" href="css/listaEstados.css"> 
+    <link rel="stylesheet" href="css/listasEstilo.css"> 
 
 </head>
 <body>    

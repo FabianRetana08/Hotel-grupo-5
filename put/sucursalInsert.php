@@ -1,7 +1,7 @@
 <?php
 
 
-include('sql/tipoClienteCRUD.php');
+include('sql/sucursalCRUD.php');
 include('sql/estadoCRUD.php');
 
 $insertEnviado = false;
@@ -10,20 +10,19 @@ $datosInvalidos = false;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (isset($_POST['insertar'])){
-        $idTipoCliente = trim($_POST['idTipoCliente']);
-        $descripcion = trim($_POST['descripcion']);
+        $idSucursal = trim($_POST['idSucursal']);
+        $telefono = trim($_POST['telefono']);
+        $email = trim($_POST['email']);
         $idEstado = trim($_POST['idEstado']);
 
-        if(is_numeric($idTipoCliente) || is_null(idTipoCliente)){
+        
             $insertEnviado = true;
-            
-            $resultado = insertarTipoCliente($idTipoCliente, $descripcion, $idEstado);
+
+            $resultado = insertarSucursal($idSucursal, $telefono, $email, $idEstado);
             if ($resultado){
                 $insertRealizado = true;
             }
-        } else {
-            $datosInvalidos = true;
-        }
+        
     }
 }
 
@@ -36,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/plantilla.css"> 
     <link rel="stylesheet" href="css/actualizarForm.css"> 
-    <title>Document</title>
+    <title>Insertar una Sucursal</title>
 </head>
 <body>
     <?php include('header/header.php'); ?>
@@ -57,11 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                     <div>
                         <p class="form-input-title">ID:</p>
-                        <input type="text" name="idTipoCliente" placeholder="ID DEL TIPO DE CLIENTE">                        
+                        <input type="text" name="idSucursal" placeholder="ID DE LA SUCURSAL" required>
                     </div>
                     <div>
-                        <p class="form-input-title">Descripcion:</p>
-                        <input type="text" name="descripcion" placeholder="DESCRIPCION" required>                        
+                        <p class="form-input-title">Telefono:</p>
+                        <input type="text" name="telefono" placeholder="TELEFONO DE LA SUCURSAL" required>
+                    </div>
+                    <div>
+                        <p class="form-input-title">Email:</p>
+                        <input type="text" name="email" placeholder="EMAIL DE LA SUCURSAL" required>
                     </div>
                     <div>
                         <p class="form-input-title">Estado:</p>
@@ -83,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </div>
 
                 <input type="submit" name="insertar" value="Insertar" class="submit-button">
-                <a href="cliente.php" class="cancel-button">Cancelar</a>
+                <a href="  sucursal.php" class="cancel-button">Cancelar</a>
 
             </form>
 
@@ -92,8 +95,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <?php if($insertRealizado): ?>
 
                 <div class="db-message-container">
-                    <h3 class="db-message">El Tipo de Cliente ha sido registrado correctamente</h3>
-                    <a href="cliente.php" class="continue-button">Continuar</a>
+                    <h3 class="db-message">La Sucursal ha sido registrada correctamente</h3>
+                    <a href="  sucursal.php" class="continue-button">Continuar</a>
                 </div>
 
             <?php else: ?>

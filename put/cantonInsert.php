@@ -1,7 +1,7 @@
 <?php
 
 
-include('sql/tipoClienteCRUD.php');
+include('sql/cantonCRUD.php');
 include('sql/estadoCRUD.php');
 
 $insertEnviado = false;
@@ -10,20 +10,18 @@ $datosInvalidos = false;
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     if (isset($_POST['insertar'])){
-        $idTipoCliente = trim($_POST['idTipoCliente']);
-        $descripcion = trim($_POST['descripcion']);
+        $idCanton = trim($_POST['idCanton']);
+        $nombreCanton = trim($_POST['nombreCanton']);
         $idEstado = trim($_POST['idEstado']);
 
-        if(is_numeric($idTipoCliente) || is_null(idTipoCliente)){
+        
             $insertEnviado = true;
-            
-            $resultado = insertarTipoCliente($idTipoCliente, $descripcion, $idEstado);
+
+            $resultado = insertarCanton($idCanton, $nombreCanton, $idEstado);
             if ($resultado){
                 $insertRealizado = true;
             }
-        } else {
-            $datosInvalidos = true;
-        }
+        
     }
 }
 
@@ -57,11 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                     <div>
                         <p class="form-input-title">ID:</p>
-                        <input type="text" name="idTipoCliente" placeholder="ID DEL TIPO DE CLIENTE">                        
+                        <input type="text" name="idCanton" placeholder="ID DEL CANTON" required>                        
                     </div>
                     <div>
-                        <p class="form-input-title">Descripcion:</p>
-                        <input type="text" name="descripcion" placeholder="DESCRIPCION" required>                        
+                        <p class="form-input-title">Nombre:</p>
+                        <input type="text" name="nombreCanton" placeholder="NOMBRE DEL CANTON" required>                        
                     </div>
                     <div>
                         <p class="form-input-title">Estado:</p>
@@ -83,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                 </div>
 
                 <input type="submit" name="insertar" value="Insertar" class="submit-button">
-                <a href="cliente.php" class="cancel-button">Cancelar</a>
+                <a href="canton.php" class="cancel-button">Cancelar</a>
 
             </form>
 
@@ -92,8 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <?php if($insertRealizado): ?>
 
                 <div class="db-message-container">
-                    <h3 class="db-message">El Tipo de Cliente ha sido registrado correctamente</h3>
-                    <a href="cliente.php" class="continue-button">Continuar</a>
+                    <h3 class="db-message">El Canton ha sido registrado correctamente</h3>
+                    <a href="canton.php" class="continue-button">Continuar</a>
                 </div>
 
             <?php else: ?>

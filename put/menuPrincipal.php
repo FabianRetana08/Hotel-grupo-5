@@ -17,8 +17,8 @@
             <a href="direccion.php" class="link">Direccion</a>
             <a href="empleado.php" class="link">Empleado</a>
             <a href="producto.php" class="link">Producto</a>
-            <a href="" class="link">Reserva</a>
-            <a href="" class="link">Habitacion</a>
+            <a href="reserva.php" class="link">Reserva</a>
+            <a href="habitacion.php" class="link">Habitacion</a>
             <a href="" class="link">Facturacion</a>
             <a href="" class="link">Servicio a la Habitacion</a>
         </div>

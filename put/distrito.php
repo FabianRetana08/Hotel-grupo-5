@@ -15,14 +15,14 @@
     <div class="principal-container">        
 
         <div class="menu">
-            <a href="listaProvincia.php" class="link">
-                Ver lista de Provincias
+            <a href="listaDistrito.php" class="link">
+                Ver lista de los Distritos
             </a>
-            <a href="provinciaInsert.php" class="link">
-                Insertar una Provincia
+            <a href="distritoInsert.php" class="link">
+                Insertar un Distrito
             </a>
-            <a href="provinciaActualizar.php" class="link">
-                Actualizar una Provincia
+            <a href="distritoActualizar.php" class="link">
+                Actualizar un Distrito
             </a>
         </div>
     </div>

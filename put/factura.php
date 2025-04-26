@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/plantilla.css"> 
     <link rel="stylesheet" href="css/menu.css"> 
-    <title>Document</title>
+    <title>Factura</title>
 </head>
 <body>
     <?php
@@ -15,14 +15,14 @@
     <div class="principal-container">        
 
         <div class="menu">
-            <a href="listaProvincia.php" class="link">
-                Ver lista de Provincias
+            <a href="listaFacturas.php" class="link">
+                Ver la lista de las Facturas
             </a>
-            <a href="provinciaInsert.php" class="link">
-                Insertar una Provincia
+            <a href="" class="link">
+                Realizar una Factura
             </a>
-            <a href="provinciaActualizar.php" class="link">
-                Actualizar una Provincia
+            <a href="" class="link">
+                Actualizar una Factura
             </a>
         </div>
     </div>
