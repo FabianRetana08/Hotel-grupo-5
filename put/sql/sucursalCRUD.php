@@ -29,25 +29,27 @@ function obtenerSucursales(){
     return $cursor;
 }
 
-function actualizarSucursal($idSucursal, $nombre, $idEstado){
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_SUCURSAL_TB_ACTUALIZAR_SP(:id, :nombre, :estado); END;';
+function actualizarSucursal($idSucursal, $telefono, $email, $idEstado){
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_SUCURSAL_TB_ACTUALIZAR_SP(:idSucursal, :telefono, :email, :estado); END;';
     require('conection.php');
 
     $stid = oci_parse($conn, $query);
-    oci_bind_by_name($stid, ":id", $idSucursal);
-    oci_bind_by_name($stid, ":nombre", $nombre);
+    oci_bind_by_name($stid, ":idSucursal", $idSucursal);
+    oci_bind_by_name($stid, ":telefono", $telefono);
+    oci_bind_by_name($stid, ":email", $email);
     oci_bind_by_name($stid, ":estado", $idEstado);
 
     return oci_execute($stid);
 }
 
-function insertarSucursal($idSucursal, $nombre, $idEstado){
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_SUCURSAL_TB_INSERTAR_SP(:id, :nombre, :estado); END;';
+function insertarSucursal($idSucursal, $telefono, $email, $idEstado){
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_SUCURSAL_TB_INSERTAR_SP(:idSucursal, :telefono, :email, :estado); END;';
     require('conection.php');
 
     $stid = oci_parse($conn, $query);
-    oci_bind_by_name($stid, ":id", $idSucursal);
-    oci_bind_by_name($stid, ":nombre", $nombre);
+    oci_bind_by_name($stid, ":idSucursal", $idSucursal);
+    oci_bind_by_name($stid, ":telefono", $telefono);
+    oci_bind_by_name($stid, ":email", $email);
     oci_bind_by_name($stid, ":estado", $idEstado);
 
     return oci_execute($stid);

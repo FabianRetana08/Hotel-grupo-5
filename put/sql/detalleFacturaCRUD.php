@@ -1,7 +1,7 @@
 <?php
 function obtenerdetalleFacturas(){
     //Estructuramos la consulta 
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_DETALLE_FACTURA_TB_OBTENER_SP(:cursor, NULL); END;';
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_DETALLE_FACTURA_TB_OBTENER_SP(:cursor, NULL, NULL, NULL, NULL, NULL); END;';
 
     //Hacemos la conexion con la base de datos
     require('conection.php');
@@ -22,9 +22,9 @@ function obtenerdetalleFacturas(){
     return $cursor;
 }
 
-function obtenerdetalleFactura($detalleFactura){
+function obtenerdetalleFactura($numDetalleFactura, $numReserva, $idCliente, $idHabitacion){
     //Estructuramos la consulta 
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_DETALLE_FACTURA_TB_OBTENER_SP(:cursor, :numDetalleFactura); END;';
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_DETALLE_FACTURA_TB_OBTENER_SP(:cursor, :numDetalleFactura, :numReserva, :idCliente, :idHabitacion); END;';
 
     //Hacemos la conexion con la base de datos
     require('conection.php');
@@ -36,6 +36,9 @@ function obtenerdetalleFactura($detalleFactura){
     //Y luego ese cursor se vincula con el parametro de salida del procedimiento
     oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
     oci_bind_by_name($stid, ":numDetalleFactura", $numDetalleFactura);
+    oci_bind_by_name($stid, ":numReserva", $numReserva);
+    oci_bind_by_name($stid, ":idCliente", $idCliente);
+    oci_bind_by_name($stid, ":idHabitacion", $idHabitacion);
 
     //Se ejecuta el procedimiento
     oci_execute($stid);

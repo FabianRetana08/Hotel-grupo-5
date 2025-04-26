@@ -38,10 +38,10 @@ function obtenerCanton($idCanton){
     return $resultado;
 }
 
-function insertCanton($idCanton, $nombreCanton, $idEstado){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CANTON_TB_INSERTAR(:idCanton, :nombreCanton, :idEstado); END;";
+function insertarCanton($idCanton, $nombreCanton, $idEstado){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CANTON_TB_INSERTAR_SP(:idCanton, :nombreCanton, :idEstado); END;";
 
-    require('coenction.php');
+    require('conection.php');
 
     $stid = oci_parse($conn, $query);
 
@@ -55,9 +55,9 @@ function insertCanton($idCanton, $nombreCanton, $idEstado){
 }
 
 function actualizarCanton($idCanton, $nombreCanton, $idEstado){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CANTON_TB_ACTUALIZAR(:idCanton, :nombreCanton, :idEstado); END;";
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CANTON_TB_ACTUALIZAR_SP(:idCanton, :nombreCanton, :idEstado); END;";
 
-    require('coenction.php');
+    require('conection.php');
 
     $stid = oci_parse($conn, $query);
 

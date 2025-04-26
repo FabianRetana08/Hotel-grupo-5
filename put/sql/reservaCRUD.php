@@ -1,6 +1,6 @@
 <?php
 function obtenerReservas(){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_RESERVA_TB_OBTENER_SP(:cursor, NULL); END;";
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_RESERVA_TB_OBTENER_SP(:cursor, NULL, NULL, NULL); END;";
 
     require('conection.php');
 
@@ -17,8 +17,8 @@ function obtenerReservas(){
     return $cursor;
 }
 
-function obtenerReserva($numReserva){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_RESERVA_TB_OBTENER_SP(:cursor, :numReserva); END;";
+function obtenerReserva($numReserva, $idCliente, $idHabitacion){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_RESERVA_TB_OBTENER_SP(:cursor, :numReserva, :idCliente, :idHabitacion); END;";
 
     require('conection.php');
 
@@ -28,6 +28,8 @@ function obtenerReserva($numReserva){
 
     oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
     oci_bind_by_name($stid, ":numReserva", $numReserva);
+    oci_bind_by_name($stid, ":idCliente", $idCliente);
+    oci_bind_by_name($stid, ":idHabitacion", $idHabitacion);
 
     oci_execute($stid);
 
@@ -39,7 +41,7 @@ function obtenerReserva($numReserva){
 }
 
 function insertarReserva($numReserva,$idCliente,$idHabitacion,$fechaReserva,$idTipoReserva,$idEstado){
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_RESERVA_TB_INSERTAR_SP(:numReserva,:idCliente,:idHabitacion,:fechaReserva,:idTipoReserva,:idEstado); END;';
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_RESERVA_TB_INSERTAR_SP(:numReserva,:idCliente,:idHabitacion, TO_DATE(:fechaReserva, 'MM/DD/YY'),:idTipoReserva,:idEstado); END;";
 
     require('conection.php');
 
@@ -59,7 +61,7 @@ function insertarReserva($numReserva,$idCliente,$idHabitacion,$fechaReserva,$idT
 }
 
 function actualizarReserva($numReserva,$idCliente,$idHabitacion,$fechaReserva,$idTipoReserva,$idEstado){
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_RESERVA_TB_ACTUALIZAR_SP(:numReserva,:idCliente,:idHabitacion,:fechaReserva,:idTipoReserva,:idEstado); END;';
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_RESERVA_TB_ACTUALIZAR_SP(:numReserva,:idCliente,:idHabitacion,TO_DATE(:fechaReserva, 'MM/DD/YY'),:idTipoReserva,:idEstado); END;";
 
     require('conection.php');
 

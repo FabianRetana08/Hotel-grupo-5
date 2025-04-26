@@ -83,4 +83,16 @@ function actualizarHabitacion($idHabitacion, $idTipoHabitacion, $idSucursal, $id
 
     return $resultado;
 }
+
+function reservarHabitacion($idHabitacion){
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_HABITACION_TB_RESERVAR_SP(:idHabitacion); END;';
+
+    require('conection.php');
+
+    $stid = oci_parse($conn, $query);
+
+    oci_bind_by_name($stid, ":idHabitacion", $idHabitacion);    
+
+    oci_execute($stid);
+}
 ?>

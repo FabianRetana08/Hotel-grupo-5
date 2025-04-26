@@ -8,7 +8,7 @@ function obtenerProvincias(){
 
     $cursor = oci_new_cursor($conn);
 
-    oci_bind_by_name($stid, ":cursor", $cursor, -1, -OCI_B_CURSOR);
+    oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
 
     oci_execute($stid);
 
@@ -26,7 +26,7 @@ function obtenerProvincia($idProvincia){
 
     $cursor = oci_new_cursor($conn);
 
-    oci_bind_by_name($stid, ":cursor", $cursor, -1, -OCI_B_CURSOR);
+    oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
     oci_bind_by_name($stid, ":idProvincia", $idProvincia);
 
     oci_execute($stid);

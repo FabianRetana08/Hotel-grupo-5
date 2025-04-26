@@ -1,6 +1,6 @@
 <?php
-function obtenerCategoriasProducto(){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CATEGORIA_PRODUCTO_TB_OBTENER_SP(:cursor, NULL); END;";
+function obtenerTiposReserva(){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_RESERVA_TB_OBTENER_SP(:cursor, NULL); END;";
 
     require('conection.php');
 
@@ -17,8 +17,8 @@ function obtenerCategoriasProducto(){
     return $cursor;
 }
 
-function obtenerCategoriaProducto($idCategoria){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CATEGORIA_PRODUCTO_TB_OBTENER_SP(:cursor, :idCategoria); END;";
+function obtenerTipoReserva($idTipoReserva){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_RESERVA_TB_OBTENER_SP(:cursor, :idTipoReserva); END;";
 
     require('conection.php');
 
@@ -27,7 +27,7 @@ function obtenerCategoriaProducto($idCategoria){
     $cursor = oci_new_cursor($conn);
 
     oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
-    oci_bind_by_name($stid, ":idCategoria", $idCategoria);
+    oci_bind_by_name($stid, ":idTipoReserva", $idTipoReserva);
 
     oci_execute($stid);
 
@@ -38,14 +38,14 @@ function obtenerCategoriaProducto($idCategoria){
     return $resultado;
 }
 
-function insertarCategoriaProdcuto($idCategoria, $nombre, $descripcion, $idEstado){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CATEGORIA_PRODUCTO_TB_INSERTAR_SP(:idCategoria, :nombre, :descripcion, :idEstado); END;";
+function insertarTipoReserva($idTipoReserva, $nombre, $descripcion, $idEstado){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_RESERVA_TB_INSERTAR_SP(:idTipoReserva, :nombre, :descripcion, :idEstado); END;";
 
     require('conection.php');
 
     $stid = oci_parse($conn, $query);
 
-    oci_bind_by_name($stid, ":idCategoria", $idCategoria);
+    oci_bind_by_name($stid, ":idTipoReserva", $idTipoReserva);
     oci_bind_by_name($stid, ":nombre", $nombre);
     oci_bind_by_name($stid, ":descripcion", $descripcion);
     oci_bind_by_name($stid, ":idEstado", $idEstado);
@@ -55,14 +55,14 @@ function insertarCategoriaProdcuto($idCategoria, $nombre, $descripcion, $idEstad
     return $resultado;
 }
 
-function actualizarCategoriaProdcuto($idCategoria, $nombre, $descripcion, $idEstado){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_CATEGORIA_PRODUCTO_TB_ACTUALIZAR_SP(:idCategoria, :nombre, :descripcion, :idEstado); END;";
+function actualizarTipoReserva($idTipoReserva, $nombre, $descripcion, $idEstado){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_RESERVA_TB_ACTUALIZAR_SP(:idTipoReserva, :nombre, :descripcion, :idEstado); END;";
 
     require('conection.php');
 
     $stid = oci_parse($conn, $query);
 
-    oci_bind_by_name($stid, ":idCategoria", $idCategoria);
+    oci_bind_by_name($stid, ":idTipoReserva", $idTipoReserva);
     oci_bind_by_name($stid, ":nombre", $nombre);
     oci_bind_by_name($stid, ":descripcion", $descripcion);
     oci_bind_by_name($stid, ":idEstado", $idEstado);

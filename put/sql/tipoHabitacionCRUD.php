@@ -1,5 +1,5 @@
 <?php
-function obtenertipoHabitaciones(){
+function obtenertiposHabitacion(){
     //Estructuramos la consulta 
     $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_TIPO_HABITACION_TB_OBTENER_SP(:cursor, NULL); END;';
 

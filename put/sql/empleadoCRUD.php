@@ -1,10 +1,10 @@
 <?php
-function obtenerEmpleado($id){
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_EMPLEADO_TB_OBTENER_SP(:cursor, :id); END;';
+function obtenerEmpleado($idEmpleado){
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_EMPLEADO_TB_OBTENER_SP(:cursor, :idEmpleado); END;';
     require('conection.php');
 
     $stid = oci_parse($conn, $query);
-    oci_bind_by_name($stid, ":id", $id);
+    oci_bind_by_name($stid, ":idEmpleado", $idEmpleado);
 
     $cursor = oci_new_cursor($conn);
     oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
@@ -29,30 +29,41 @@ function obtenerEmpleados(){
     return $cursor;
 }
 
-function actualizarEmpleado($id, $nombre, $apellido, $idArea, $idEstado){
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_EMPLEADO_TB_ACTUALIZAR_SP(:id, :nombre, :apellido, :area, :estado); END;';
+function actualizarEmpleado($idEmpleado, $nombreEmpleado, $primerApellido, $segundoApellido, $email, $numTelefono, $idPuestoTrabajo, $idAreaTrabajo, $idSucursal, $idEstado){
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_EMPLEADO_TB_ACTUALIZAR_SP(:idEmpleado, :nombreEmpleado, :primerApellido, :segundoApellido, :email, :numTelefono, :idPuestoTrabajo, :idAreaTrabajo, :idSucursal, :idEstado); END;';
     require('conection.php');
 
     $stid = oci_parse($conn, $query);
-    oci_bind_by_name($stid, ":id", $id);
-    oci_bind_by_name($stid, ":nombre", $nombre);
-    oci_bind_by_name($stid, ":apellido", $apellido);
-    oci_bind_by_name($stid, ":area", $idArea);
-    oci_bind_by_name($stid, ":estado", $idEstado);
+    oci_bind_by_name($stid, ":idEmpleado", $idEmpleado);
+    oci_bind_by_name($stid, ":nombreEmpleado", $nombreEmpleado);
+    oci_bind_by_name($stid, ":primerApellido", $primerApellido);
+    oci_bind_by_name($stid, ":segundoApellido", $primerApellido);
+    oci_bind_by_name($stid, ":email", $email);
+    oci_bind_by_name($stid, ":numTelefono", $numTelefono);
+    oci_bind_by_name($stid, ":idPuestoTrabajo", $idPuestoTrabajo);
+    oci_bind_by_name($stid, ":idAreaTrabajo", $idAreaTrabajo);
+    oci_bind_by_name($stid, ":idSucursal", $idSucursal);
+    oci_bind_by_name($stid, ":idEstado", $idEstado);
 
     return oci_execute($stid);
 }
 
-function insertarEmpleado($id, $nombre, $apellido, $idArea, $idEstado){
-    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_EMPLEADO_TB_INSERTAR_SP(:id, :nombre, :apellido, :area, :estado); END;';
+function insertarEmpleado($idEmpleado, $nombreEmpleado, $primerApellido, $segundoApellido, $email, $numTelefono, $idPuestoTrabajo, $idAreaTrabajo, $idSucursal, $idEstado){
+    $query = 'BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_EMPLEADO_TB_INSERTAR_SP(:idEmpleado, :nombreEmpleado, :primerApellido, :segundoApellido, :email, :numTelefono, :idPuestoTrabajo, :idAreaTrabajo, :idSucursal, :idEstado); END;';
     require('conection.php');
 
     $stid = oci_parse($conn, $query);
-    oci_bind_by_name($stid, ":id", $id);
-    oci_bind_by_name($stid, ":nombre", $nombre);
-    oci_bind_by_name($stid, ":apellido", $apellido);
-    oci_bind_by_name($stid, ":area", $idArea);
-    oci_bind_by_name($stid, ":estado", $idEstado);
+    $stid = oci_parse($conn, $query);
+    oci_bind_by_name($stid, ":idEmpleado", $idEmpleado);
+    oci_bind_by_name($stid, ":nombreEmpleado", $nombreEmpleado);
+    oci_bind_by_name($stid, ":primerApellido", $primerApellido);
+    oci_bind_by_name($stid, ":segundoApellido", $primerApellido);
+    oci_bind_by_name($stid, ":email", $email);
+    oci_bind_by_name($stid, ":numTelefono", $numTelefono);
+    oci_bind_by_name($stid, ":idPuestoTrabajo", $idPuestoTrabajo);
+    oci_bind_by_name($stid, ":idAreaTrabajo", $idAreaTrabajo);
+    oci_bind_by_name($stid, ":idSucursal", $idSucursal);
+    oci_bind_by_name($stid, ":idEstado", $idEstado);
 
     return oci_execute($stid);
 }

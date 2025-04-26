@@ -1,5 +1,5 @@
 <?php
-function obtenerProdcutos(){
+function obtenerProductos(){
     $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PRODUCTO_TB_OBTENER_SP(:cursor, NULL); END;";
 
     require('conection.php');
@@ -17,7 +17,7 @@ function obtenerProdcutos(){
     return $cursor;
 }
 
-function obtenerProdcuto($idProducto){
+function obtenerProducto($idProducto){
     $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PRODUCTO_TB_OBTENER_SP(:cursor, :idProducto); END;";
 
     require('conection.php');
@@ -27,17 +27,17 @@ function obtenerProdcuto($idProducto){
     $cursor = oci_new_cursor($conn);
 
     oci_bind_by_name($stid, ":cursor", $cursor, -1, OCI_B_CURSOR);
-    oci_bind_by_name($stid, ":idPruducto");
+    oci_bind_by_name($stid, ":idProducto", $idProducto);
 
     oci_execute($stid);
     
     oci_execute($cursor);
 
-    return $cursor;
+    return oci_fetch_assoc($cursor);
 }
 
-function insertarProdcuto($idProducto, $nombre, $descripcion, $idCategoria, $idSucursal, $idEstado){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PRODUCTO_TB_INSERTAR_SP(:cursor, :idProductos); END;";
+function insertarProducto($idProducto, $nombre, $descripcion, $idCategoria, $idSucursal, $idEstado){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PRODUCTO_TB_INSERTAR_SP(:idProducto, :nombre, :descripcion, :idCategoria, :idSucursal, :idEstado); END;";
 
     require('conection.php');
 
@@ -55,8 +55,8 @@ function insertarProdcuto($idProducto, $nombre, $descripcion, $idCategoria, $idS
     return $resultado;
 }
 
-function actualizarProdcuto($idProducto, $nombre, $descripcion, $idCategoria, $idSucursal, $idEstado){
-    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PRODUCTO_TB_ACTUALIZAR_SP(:cursor, :idProductos); END;";
+function actualizarProducto($idProducto, $nombre, $descripcion, $idCategoria, $idSucursal, $idEstado){
+    $query = "BEGIN FIDE_HOTEL_HIMERO_PKG.FIDE_PRODUCTO_TB_ACTUALIZAR_SP(:idProducto, :nombre, :descripcion, :idCategoria, :idSucursal, :idEstado); END;";
 
     require('conection.php');
 
